@@ -64,18 +64,41 @@
             padding: 10px; /* Added padding */
         }
     </style>
-    <script type="module" src="/index.js"></script>
+    <script defer type="module" cross-origin src="/index.js"></script>
 </head>
 <body>
     <div class="container">
-        <textarea class="textbox" id="sourceFields" rows="5" cols="50"></textarea>
-        <button class="submit-btn" onclick="processCsv()">Submit</button>
+        <div class="row">
+            <label for="sourceFields">Paste Here:</label>
+        <textarea class="textbox" id="sourceFields" rows="6" cols="50"></textarea>
+        </div>
+        <div class="radio-buttons">
+            <div class="radio-buttons">
+                <input type="radio" id="gridLayout" name="layout" value="grid">
+                <label for="gridLayout">Grid Layout</label>
+                <input type="radio" id="query" name="layout" value="query">
+                <label for="query">Search Query</label>
+                <input type="radio" id="advSearchLayout" name="layout" value="adv-search">
+                <label for="advSearchLayout">Advanced Search Layout</label>
+                <input type="radio" id="detailsLayout" name="layout" value="details">
+                <label for="detailsLayout">Details Layout</label>
+            </div>
+        </div>
+        <div class="row">
+            <label for="fileNamePrefix">File Name Prefix:</label>
+            <input type="text" class="textbox" id="fileNamePrefix" maxlength="10">
+        </div>
+        <div class="button-container">
+            <button class="submit-btn" onclick="processCsv()">Submit</button>
+        </div>
         <div class="div1">
             <div class="div-header">Fields</div>
+            <button class="submit-btn" onclick="createAndDownloadFile(0)">Download</button>
             <div id="fields"></div> <!-- Updated code -->
         </div>
         <div class="div2">
             <div class="div-header">Field vs Count</div>
+            <button class="submit-btn" onclick="createAndDownloadFile(1)">Download</button>
             <div id="fieldCount"></div> <!-- Updated code -->
         </div>
     </div>

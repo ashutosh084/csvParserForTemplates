@@ -7,5 +7,6 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
-  }
+  },
+  "packageManager": "yarn@3.6.3"
 }
