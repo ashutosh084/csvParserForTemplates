@@ -1,0 +1,11 @@
+{
+  "name": "misc_project",
+  "devDependencies": {
+    "vite": "^5.2.8"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  }
+}
